@@ -852,3 +852,21 @@ section h2{
 .weekdays{
     gap: 5px;
 }
+
+
+@media(max-width:480px){
+
+    .day{
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+
+    .wedding-day{
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+
+    .calendar-header{
+        font-size: 1.1rem;
+    }
+}
