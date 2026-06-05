@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ռոբերտ & Մարիա | Wedding Invitation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<!-- ADMIN BUTTON (hidden trigger) -->
+<button id="adminBtn" style="
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    width:50px;
+    height:50px;
+    opacity:0;
+    z-index:9999;
+"></button>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="modal">
+    <div class="modal-card">
+        <h2>Admin Panel</h2>
+
+        <div id="adminContent"></div>
+
+        <button id="clearDataBtn" class="close-btn" style="background:#ff4d4d;color:white;">
+            Մաքրել տվյալները
+        </button>
+
+        <button id="closeAdminBtn" class="close-btn">
+            Փակել
+        </button>
+    </div>
+</div>
+
+<body>
+
+<!-- Animated Background -->
+<div class="bg-gradient"></div>
+<div class="particles"></div>
+
+<!-- OPENING SCREEN -->
+<section id="welcomeScreen" class="welcome-screen">
+
+    <div class="welcome-overlay"></div>
+
+    <div class="welcome-card">
+
+        <div class="ring-icon">💍</div>
+
+        <p class="invite-small">
+            Հարսանյաց հրավիրատոմս
+        </p>
+
+        <h1 class="welcome-names">
+            Ռոբերտ <span>&</span> Մարիա
+        </h1>
+
+        <p class="welcome-date">
+            14 Հունիսի • 2026
+        </p>
+
+        <button id="openInvitation" class="open-btn">
+            ԲԱՑԵԼ ՀՐԱՎԻՐԱՏՈՄՍԸ
+        </button>
+
+    </div>
+
+</section>
+
+<!-- MAIN CONTENT -->
+<main id="mainContent">
+
+    <!-- HERO -->
+    <section class="hero reveal">
+
+        <div class="hero-image">
+
+            <div class="hero-content">
+
+                <h1 class="hero-names">
+                    Ռոբերտ & Մարիա
+                </h1>
+
+                <p class="hero-subtitle">
+                    Մեր կյանքի ամենակարևոր օրը
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DATE SECTION -->
+    <section class="date-section reveal">
+
+        <div class="glass-card">
+
+            <h2>Մեր հարսանիքը</h2>
+
+            <div class="hero-date">
+                14 Հունիսի 2026
+            </div>
+
+            <p class="weekday">
+                Կիրակի
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section reveal">
+
+        <h2>Մինչ հարսանիքը մնացել է</h2>
+
+        <div id="timer" class="countdown-grid">
+
+            <div class="time-box">
+                <span>00</span>
+                <small>Օր</small>
+            </div>
+
+            <div class="time-box">
+                <span>00</span>
+                <small>Ժամ</small>
+            </div>
+
+            <div class="time-box">
+                <span>00</span>
+                <small>Րոպե</small>
+            </div>
+
+            <div class="time-box">
+                <span>00</span>
+                <small>Վայրկյան</small>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="calendar-section reveal">
+
+        <div class="glass-card">
+
+            <h2>Օրացույց</h2>
+
+            <div class="calendar">
+
+                <div class="calendar-header">
+                    Հունիս 2026
+                </div>
+
+                <div class="weekdays">
+                    <span>Երկ</span>
+                    <span>Երք</span>
+                    <span>Չոր</span>
+                    <span>Հնգ</span>
+                    <span>Ուրբ</span>
+                    <span>Շաբ</span>
+                    <span>Կիր</span>
+                </div>
+
+                <div id="calendarDays" class="calendar-days"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CEREMONY -->
+    <section class="event reveal">
+
+        <div class="event-icon">
+            ⛪
+        </div>
+
+        <h2>Պսակադրություն</h2>
+
+        <div class="event-time">
+            15:00
+        </div>
+
+        <p class="event-location">
+            Սբ․ Գայանե Եկեղեցի
+        </p>
+
+        <div class="event-image">
+            <img src="church.jpg" alt="Church">
+        </div>
+
+        <a
+                href="https://maps.app.goo.gl/tNL9h6bnY3YBecLJ8"
+                target="_blank"
+                class="map-btn">
+            Ինչպես հասնել
+        </a>
+
+    </section>
+
+    <!-- RECEPTION -->
+    <section class="event reveal">
+
+        <div class="event-icon">
+            🥂
+        </div>
+
+        <h2>Հանդիսություն</h2>
+
+        <div class="event-time">
+            17:00
+        </div>
+
+        <p class="event-location">
+            Դվին Մյուզիք Հոլլ
+        </p>
+
+        <div class="event-image">
+            <img src="hall.jpg" alt="Hall">
+        </div>
+
+        <a
+                href="https://maps.app.goo.gl/KbZit3ohozCfjPgw8"
+                target="_blank"
+                class="map-btn">
+            Ինչպես հասնել
+        </a>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section reveal">
+
+        <h2>Մեր հիշողությունները</h2>
+
+        <div class="gallery-grid">
+
+            <img src="photo1.png" alt="">
+            <img src="photo2.png" alt="">
+            <img src="photo3.png" alt="">
+            <img src="photo4.png" alt="">
+            <img src="photo5.png" alt="">
+            <img src="photo6.png" alt="">
+            <img src="photo7.png" alt="">
+            <img src="photo8.png" alt="">
+
+        </div>
+
+    </section>
+
+    <!-- RSVP -->
+    <section class="rsvp-section reveal">
+
+        <div class="glass-card">
+
+            <h2>
+                Կկարողանա՞ք ներկա գտնվել
+            </h2>
+
+            <button id="showModalBtn" class="confirm-btn">
+                ՀԱՍՏԱՏԵԼ ՆԵՐԿԱՅՈՒԹՅՈՒՆԸ
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <section class="footer-section reveal">
+
+        <p>
+            «Սերը երբեք չի վերջանում»
+        </p>
+
+        <h3>
+            Սիրով սպասում ենք Ձեզ
+        </h3>
+
+    </section>
+
+</main>
+
+<!-- RSVP MODAL -->
+<div id="rsvpModal" class="modal">
+
+    <div class="modal-card">
+
+        <h2>Հաստատում</h2>
+
+        <input
+                type="text"
+                id="guestName"
+                placeholder="Անուն Ազգանուն"
+        >
+
+        <div class="attendance-options">
+
+            <button class="option active" data-val="Այո">
+                Այո
+            </button>
+
+            <button class="option" data-val="Ոչ">
+                Ոչ
+            </button>
+
+        </div>
+
+        <div id="countBox">
+
+            <input
+                    type="number"
+                    id="guestCount"
+                    min="1"
+                    value="1"
+            >
+
+        </div>
+
+        <textarea
+                id="guestWish"
+                placeholder="Ձեր բարեմաղթանքը"
+        ></textarea>
+
+        <button id="sendBtn">
+            Հաստատել
+        </button>
+
+        <button id="closeModalBtn" class="close-btn">
+            Փակել
+        </button>
+
+    </div>
+
+</div>
+
+<!-- MUSIC -->
+<button id="musicToggle" class="music-btn">
+    🎵
+</button>
+
+<audio
+        id="bgMusic"
+        src="music.mp3"
+        loop>
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
