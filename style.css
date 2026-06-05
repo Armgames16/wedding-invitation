@@ -829,3 +829,26 @@ section h2{
         width: 100%;
     }
 }
+
+.calendar-header{
+    font-size: 1.3rem;
+}
+
+.weekdays span{
+    font-size: 0.8rem;
+}
+
+.day{
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.wedding-day{
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.calendar-days,
+.weekdays{
+    gap: 5px;
+}
