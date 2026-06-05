@@ -786,3 +786,46 @@ section h2{
     border-radius: 10px;
     font-size: 14px;
 }
+
+
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    .time-box {
+        min-width: 70px;
+        padding: 10px;
+    }
+
+    #timer {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .modal-content {
+        width: 92%;
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
