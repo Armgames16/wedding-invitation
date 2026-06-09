@@ -14,9 +14,8 @@ html{
 
 body{
     font-family:'Montserrat',sans-serif;
-    background:#f7fcff;
-    color:#222;
-    overflow-x:hidden;
+    background:#e6d5cf;
+    color: #5c5954;
     position:relative;
 }
 
@@ -25,10 +24,12 @@ body{
 ========================= */
 
 :root{
-    --primary:#00cae3;
-    --primary-dark:#00acc1;
-    --text:#222;
+    --primary:#d7a98c;
+    --primary-dark:#e8cec0;
+
+    --text:#5c5954;
     --light:#ffffff;
+
     --glass:rgba(255,255,255,.22);
     --border:rgba(255,255,255,.4);
 }
@@ -41,14 +42,7 @@ body{
     position:fixed;
     inset:0;
     z-index:-3;
-
-    background:
-            linear-gradient(
-                    135deg,
-                    #f7fdff 0%,
-                    #ffffff 40%,
-                    #eefcff 100%
-            );
+    background:#efe6df;
 }
 
 .bg-gradient::before{
@@ -63,7 +57,7 @@ body{
     background:
             radial-gradient(
                     circle,
-                    rgba(0,202,227,.22),
+                    rgba(230,213,207,.25),
                     transparent 70%
             );
 
@@ -85,7 +79,7 @@ body{
     background:
             radial-gradient(
                     circle,
-                    rgba(42,245,152,.15),
+                    rgba(230,213,207,.2),
                     transparent 70%
             );
 
@@ -149,13 +143,14 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    transition: opacity 0.9s ease, transform 0.9s ease;
 
     background:
             linear-gradient(
                     rgba(0,0,0,.25),
                     rgba(0,0,0,.25)
             ),
-            url("hero.png")
+            url("hero.jpg")
             center/cover;
 }
 
@@ -241,9 +236,7 @@ body{
 .map-btn:hover{
     transform:translateY(-4px);
 
-    box-shadow:
-            0 12px 30px
-            rgba(0,202,227,.35);
+    box-shadow:0 12px 30px rgba(230,157,106,.4);
 }
 
 /* =========================
@@ -255,19 +248,24 @@ body{
 }
 
 .hero-image{
-    height:85vh;
+    height: 100dvh;
+    min-height: 100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background-image:url("couple.jpg");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
 
-    background:
-            linear-gradient(
-                    rgba(0,0,0,.25),
-                    rgba(0,0,0,.25)
-            ),
-            url("couple.png")
-            center/cover;
+    animation:heroFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
 }
 
 .hero-content{
@@ -277,7 +275,7 @@ body{
 
 .hero-names{
     font-family:'Cormorant Garamond',serif;
-    font-size:5rem;
+    font-size:4rem;
 }
 
 .hero-subtitle{
@@ -335,7 +333,7 @@ section h2{
 
     font-weight:700;
 
-    color:var(--primary);
+    color:#d6ac60;
 }
 
 .time-box small{
@@ -400,21 +398,6 @@ section h2{
 
 .gallery-grid img:hover{
     transform:scale(1.05);
-}
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-
-.reveal{
-    opacity:0;
-    transform:translateY(60px);
-    transition:1s;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:none;
 }
 
 /* =========================
@@ -550,7 +533,7 @@ section h2{
 .hero-date{
     font-size:3rem;
     font-weight:700;
-    color:#00cae3;
+    color:#d6ac60;;
     text-align:center;
     margin:15px 0;
 }
@@ -571,7 +554,7 @@ section h2{
     text-align:center;
     font-size:1.8rem;
     font-weight:700;
-    color:#00cae3;
+    color:#d6ac60;
     margin-bottom:20px;
 }
 
@@ -613,8 +596,16 @@ section h2{
 }
 
 .wedding-day{
-    color:#ff4081;
-    font-weight:bold;
+    background:linear-gradient(
+            135deg,
+            #e69d6a,
+            #e6ba9c
+    );
+
+    color:white;
+
+    box-shadow:
+            0 8px 25px rgba(230,157,106,.35);
 }
 
 /* RSVP */
@@ -625,7 +616,7 @@ section h2{
 
 #guestCounter{
     margin-top:20px;
-    color:#00cae3;
+    color:#e69d6a;
     font-weight:600;
 }
 
@@ -646,7 +637,7 @@ section h2{
 }
 
 .option.active{
-    background:#00cae3;
+    background:#e69d6a;
     color:white;
 }
 
@@ -674,86 +665,68 @@ section h2{
 
 .footer-section h3{
     margin-top:15px;
-    color:#00cae3;
+    color:#d6ac60;
 }
 
-.wedding-day{
-    background:linear-gradient(
-            135deg,
-            #00cae3,
-            #00acc1
-    );
 
-    color:white;
-
-    border-radius:16px;
-
-    padding:15px;
-
-    font-weight:700;
-
-    box-shadow:
-            0 8px 25px rgba(0,202,227,.35);
-}
 
 .confirm-btn{
-    font-size:1rem;
-    font-weight:700;
-    padding:18px 35px;
-    border-radius:25px;
-
     background:linear-gradient(
             135deg,
-            #00cae3,
-            #00acc1
+            #e3b48d,
+            #e3c6b8
     );
 
     box-shadow:
-            0 10px 25px rgba(0,202,227,.35);
+            0 10px 25px rgba(230,157,106,.35);
 }
 
 
-    #sendBtn{
-        width:100%;
+#sendBtn{
+    width:100%;
 
-        padding:16px;
+    padding:16px;
 
-        border:none;
+    border:none;
 
-        border-radius:15px;
+    border-radius:15px;
 
-        background:#00cae3;
-
-        color:white;
-
-        font-weight:700;
-
-        cursor:pointer;
-
-        transition:.3s;
-    }
-
-    #sendBtn:hover{
-        background:#00acc1;
-    }
-
-.wedding-day{
-    background:linear-gradient(
-            135deg,
-            #00cae3,
-            #00acc1
-    );
+    background:#e3b48d;
 
     color:white;
 
-    border-radius:16px;
+    font-weight:700;
 
-    padding:15px;
+    cursor:pointer;
 
+    transition:.3s;
+}
+
+#sendBtn:hover{
+    background:#d88953;
+}
+
+.wedding-day{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+            135deg,
+            #e69d6a,
+            #e6ba9c
+    );
+
+    color:white;
     font-weight:700;
 
     box-shadow:
-            0 8px 25px rgba(0,202,227,.35);
+            0 6px 18px rgba(230,157,106,.3);
 
     animation:pulseDay 2s infinite;
 }
@@ -772,20 +745,6 @@ section h2{
     }
 }
 
-
-#adminContent {
-    margin-top: 15px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.admin-row {
-    padding: 10px;
-    margin-bottom: 10px;
-    background: #f5f5f5;
-    border-radius: 10px;
-    font-size: 14px;
-}
 
 
 
@@ -869,4 +828,503 @@ section h2{
     .calendar-header{
         font-size: 1.1rem;
     }
+}
+
+
+.day.empty{
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
+}
+
+.welcome-screen{
+    transition:opacity .9s ease;
+}
+
+
+.gallery-grid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+@media(max-width:768px){
+
+    .hero-image{
+        height:100vh;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+
+}
+
+.day{
+    height:42px;
+    padding:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:0.85rem;
+}
+
+.wedding-day{
+    position:relative;
+
+    background:linear-gradient(
+            135deg,
+            #e6c0a6,
+            #e8cec0
+    );
+
+    color:white;
+    font-weight:700;
+
+    animation:pulseDay 2s infinite;
+}
+
+.wedding-day::before{
+    content:"❤️";
+    position:absolute;
+    top:-10px;
+    right:-6px;
+
+    font-size:18px;
+
+    animation:heartFloat 2s infinite ease-in-out;
+}
+
+@keyframes heartFloat{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+
+.program-section .glass-card{
+    text-align:center;
+    padding:50px 35px;
+}
+
+.program-section h2{
+    margin:0;
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    color:#d6ac60;
+    letter-spacing:1px;
+}
+
+
+@media(max-width:768px){
+
+    .program-section h2{
+        font-size:2.2rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .calendar{
+        max-width:330px;
+        margin:auto;
+    }
+
+    .calendar-days,
+    .weekdays{
+        gap:4px;
+    }
+
+    .day{
+        height:36px;
+        font-size:0.8rem;
+        border-radius:10px;
+    }
+
+    .wedding-day{
+        height:36px;
+        font-size:0.8rem;
+    }
+
+}
+
+.calendar{
+    max-width:400px;
+    margin:auto;
+}
+
+
+.intro-section{
+    text-align:center;
+}
+
+.intro-section h2{
+    font-family:'Cormorant Garamond',serif;
+    color:#d6ac60;
+    margin-bottom:20px;
+}
+
+.intro-text{
+    max-width:700px;
+    margin:auto;
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+/* =========================
+   COUPLE GALLERY
+========================= */
+
+.couple-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    width:700px;
+    max-width:95%;
+
+    margin:auto;
+}
+
+.photo img{
+    width:100%;
+    display:block;
+
+    border-radius:28px;
+
+    object-fit:cover;
+
+    box-shadow:
+            0 15px 35px rgba(0,0,0,.12);
+}
+
+/* PHOTO POSITIONS */
+
+.p1{
+    margin-top:0;
+}
+
+.p2{
+    margin-top:80px;
+}
+
+.p3{
+    margin-top:-60px;
+}
+
+.p4{
+    margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .couple-gallery{
+        gap:15px;
+    }
+
+    .p1{
+        margin-top:0;
+    }
+
+    .p2{
+        margin-top:50px;
+    }
+
+    .p3{
+        margin-top:-35px;
+    }
+
+    .p4{
+        margin-top:25px;
+    }
+
+}
+
+.photo img{
+    transition:.4s;
+}
+
+.photo img:hover{
+    transform:scale(1.03);
+}
+
+.music-btn.playing{
+    animation:spin 4s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.program-section .glass-card{
+    text-align:center;
+}
+
+.program-section h2{
+    margin:0;
+    text-align:center;
+}
+
+.program-section{
+    padding-bottom:20px;
+}
+
+.event{
+    margin-top:40px;
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-content{
+    position:absolute;
+    left:50%;
+    bottom:80px;
+    transform:translateX(-50%);
+    text-align:center;
+}
+
+.hero-names{
+    color:#c8895d;
+    text-shadow:0 4px 15px rgba(255,255,255,.5);
+}
+
+.hero-subtitle{
+    color:#d79f78;
+    text-shadow:0 4px 15px rgba(255,255,255,.5);
+}
+
+
+
+.success-popup{
+    position:fixed;
+
+    top:30px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#fff;
+
+    padding:18px 25px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+    z-index:9999;
+
+    display:none;
+}
+
+
+.lightbox{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+
+    border-radius:20px;
+}
+
+body.locked {
+    touch-action: none;
+}
+
+.welcome-screen{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.welcome-card{
+    text-align:center;
+    word-break:break-word;
+}
+
+.welcome-names{
+    line-height:1.2;
+}
+
+.welcome-names{
+    line-height:1.2;
+}
+
+.welcome-card{
+    margin:auto;
+    position:relative;
+}
+
+.welcome-names{
+    font-size:clamp(2rem, 6vw, 3rem);
+}
+
+html{
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+.welcome-screen{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body{
+    overflow-x:hidden;
+    width:100%;
+}
+
+/* Ֆիքսում ենք scroll-ը AOS-ի համար */
+html {
+    scroll-behavior: smooth;
+    height: auto; /* Ջնջում ենք 100%-ը */
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto; /* Թույլ ենք տալիս ազատ scroll */
+    height: auto;     /* Ջնջում ենք 100%-ը */
+}
+
+body{
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.aos-init.aos-animate{
+    opacity:1 !important;
+}
+
+/* =========================
+   WELCOME SCREEN (RESPONSIVE)
+========================= */
+
+.welcome-screen{
+    position:fixed;
+    inset:0;
+    z-index:5000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding: 15px; /* 🆕 Թույլ չի տա, որ քարտը կպչի էկրանի եզրերին */
+    transition: opacity 0.9s ease, transform 0.9s ease;
+
+    background:
+            linear-gradient(
+                    rgba(0,0,0,.25),
+                    rgba(0,0,0,.25)
+            ),
+            url("hero.jpg")
+            center/cover no-repeat;
+}
+
+.welcome-card{
+    width: 100%; /* 🆕 Հարմարվում է էկրանի լայնությանը */
+    max-width: 400px;
+
+    padding: 35px 20px; /* 🆕 Օպտիմալ padding հեռախոսի համար */
+
+    border-radius:30px;
+    text-align:center;
+
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px); /* 🆕 Safari-ի համար */
+
+    border:1px solid rgba(255,255,255,.3);
+
+    word-break: break-word; /* 🆕 Թույլ չի տա տեքստին դուրս թռչել */
+    box-sizing: border-box;
+    animation:cardAppear 1.2s ease;
+}
+
+.ring-icon{
+    font-size: clamp(40px, 10vw, 60px); /* 🆕 Ավտոմատ փոքրացող մատանի */
+    margin-bottom:15px;
+}
+
+.welcome-names{
+    font-family:'Cormorant Garamond',serif;
+    font-size: clamp(1.8rem, 7vw, 3rem); /* 🆕 Ավտոմատ փոքրացող անուններ */
+    line-height:1.2;
+    margin-bottom:15px;
+    color:white;
+}
+
+.welcome-date{
+    color:white;
+    opacity:.9;
+    font-size: clamp(0.9rem, 4vw, 1.1rem); /* 🆕 Ավտոմատ փոքրացող ամսաթիվ */
+    margin-bottom:30px;
+}
+
+/* =========================
+   BUTTONS (RESPONSIVE)
+========================= */
+
+.open-btn,
+.confirm-btn,
+.map-btn{
+    background:
+            linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+            );
+
+    color:white;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:600;
+
+    /* 🎯 Կենտրոնացնում ենք տեքստը կոճակի ներսում */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px 24px;
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto; /* 🆕 Միշտ կպահի կոճակը էջի/քարտի ճիշտ կենտրոնում */
+
+    transition:.35s;
+    box-sizing: border-box;
 }
