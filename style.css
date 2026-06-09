@@ -12,11 +12,12 @@ html{
     scroll-behavior:smooth;
 }
 
-body{
+body {
     font-family:'Montserrat',sans-serif;
     background:#e6d5cf;
     color: #5c5954;
     position:relative;
+    touch-action: pan-x pan-y;
 }
 
 /* =========================
@@ -244,7 +245,7 @@ body{
 ========================= */
 
 .hero{
-    padding-top:120px;
+    padding-top:0;
 }
 
 .hero-image{
@@ -268,10 +269,6 @@ body{
     }
 }
 
-.hero-content{
-    text-align:center;
-    color:white;
-}
 
 .hero-names{
     font-family:'Cormorant Garamond',serif;
@@ -837,10 +834,6 @@ section h2{
     cursor: default;
 }
 
-.welcome-screen{
-    transition:opacity .9s ease;
-}
-
 
 .gallery-grid img{
     width:100%;
@@ -918,6 +911,7 @@ section h2{
 
 .program-section h2{
     margin:0;
+    text-align:center;
     font-family:'Cormorant Garamond',serif;
     font-size:3rem;
     color:#d6ac60;
@@ -1074,14 +1068,6 @@ section h2{
     }
 }
 
-.program-section .glass-card{
-    text-align:center;
-}
-
-.program-section h2{
-    margin:0;
-    text-align:center;
-}
 
 .program-section{
     padding-bottom:20px;
@@ -1095,13 +1081,6 @@ section h2{
     position:relative;
 }
 
-.hero-content{
-    position:absolute;
-    left:50%;
-    bottom:80px;
-    transform:translateX(-50%);
-    text-align:center;
-}
 
 .hero-names{
     color:#c8895d;
@@ -1162,21 +1141,10 @@ body.locked {
     touch-action: none;
 }
 
-.welcome-screen{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
 
 .welcome-card{
     text-align:center;
     word-break:break-word;
-}
-
-.welcome-names{
-    line-height:1.2;
 }
 
 .welcome-names{
@@ -1197,14 +1165,11 @@ html{
     text-size-adjust: 100%;
 }
 
-.welcome-screen{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 
 body{
     overflow-x:hidden;
+    overflow-y:auto;
     width:100%;
 }
 
@@ -1328,3 +1293,5 @@ body{
     transition:.35s;
     box-sizing: border-box;
 }
+
+
