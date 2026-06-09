@@ -2,9 +2,10 @@
 <html lang="hy">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ռոբերտ & Մարիա | Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ստյոպա և Կարինե | Wedding Invitation</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,35 +14,8 @@
 
 </head>
 
-<!-- ADMIN BUTTON (hidden trigger) -->
-<button id="adminBtn" style="
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    width:50px;
-    height:50px;
-    opacity:0;
-    z-index:9999;
-"></button>
-
-<!-- ADMIN PANEL -->
-<div id="adminPanel" class="modal">
-    <div class="modal-card">
-        <h2>Admin Panel</h2>
-
-        <div id="adminContent"></div>
-
-        <button id="clearDataBtn" class="close-btn" style="background:#ff4d4d;color:white;">
-            Մաքրել տվյալները
-        </button>
-
-        <button id="closeAdminBtn" class="close-btn">
-            Փակել
-        </button>
-    </div>
-</div>
-
 <body>
+
 
 <!-- Animated Background -->
 <div class="bg-gradient"></div>
@@ -61,11 +35,11 @@
         </p>
 
         <h1 class="welcome-names">
-            Ռոբերտ <span>&</span> Մարիա
+            Ստյոպա <span>և</span> Կարինե
         </h1>
 
         <p class="welcome-date">
-            14 Հունիսի • 2026
+            29 Հուլիսի • 2026
         </p>
 
         <button id="openInvitation" class="open-btn">
@@ -80,39 +54,41 @@
 <main id="mainContent">
 
     <!-- HERO -->
-    <section class="hero reveal">
+    <section class="hero" data-aos="zoom-out">
 
         <div class="hero-image">
 
-            <div class="hero-content">
+        </div>
 
-                <h1 class="hero-names">
-                    Ռոբերտ & Մարիա
-                </h1>
+    </section>
 
-                <p class="hero-subtitle">
-                    Մեր կյանքի ամենակարևոր օրը
-                </p>
+    <section class="intro-section" data-aos="fade-up">
 
-            </div>
+        <div class="glass-card">
+
+            <h2>Սիրելի ընկերներ և հարազատներ</h2>
+
+            <p class="intro-text">
+                <i>Սիրով հրավիրում ենք ներկա գտնվելու մեր հարսանյաց հանդիսությանը և կիսելու մեր երջանկությունը․․․</i>
+            </p>
 
         </div>
 
     </section>
 
     <!-- DATE SECTION -->
-    <section class="date-section reveal">
+    <section class="date-section" data-aos="fade-up">
 
         <div class="glass-card">
 
-            <h2>Մեր հարսանիքը</h2>
+            <h2>Հարսանիքը տեղի կունենա</h2>
 
             <div class="hero-date">
-                14 Հունիսի 2026
+                29 Հուլիսի 2026
             </div>
 
             <p class="weekday">
-                Կիրակի
+                Չորեքշաբթի
             </p>
 
         </div>
@@ -120,9 +96,9 @@
     </section>
 
     <!-- COUNTDOWN -->
-    <section class="countdown-section reveal">
+    <section class="countdown-section" data-aos="zoom-in">
 
-        <h2>Մինչ հարսանիքը մնացել է</h2>
+        <h2>Մինչև հարսանիքը մնացել է</h2>
 
         <div id="timer" class="countdown-grid">
 
@@ -151,7 +127,7 @@
     </section>
 
     <!-- CALENDAR -->
-    <section class="calendar-section reveal">
+    <section class="calendar-section" data-aos="fade-up">
 
         <div class="glass-card">
 
@@ -160,17 +136,17 @@
             <div class="calendar">
 
                 <div class="calendar-header">
-                    Հունիս 2026
+                    Հուլիս 2026
                 </div>
 
                 <div class="weekdays">
                     <span>Երկ</span>
                     <span>Երք</span>
-                    <span>Չոր</span>
+                    <span>Չրք</span>
                     <span>Հնգ</span>
                     <span>Ուրբ</span>
-                    <span>Շաբ</span>
-                    <span>Կիր</span>
+                    <span>Շբթ</span>
+                    <span>Կրկ</span>
                 </div>
 
                 <div id="calendarDays" class="calendar-days"></div>
@@ -182,7 +158,18 @@
     </section>
 
     <!-- CEREMONY -->
-    <section class="event reveal">
+    <section class="program-section">
+
+        <div class="glass-card">
+
+            <h2>Օրվա ծրագիր</h2>
+
+        </div>
+
+    </section>
+
+
+    <section class="event" data-aos="fade-right">
 
         <div class="event-icon">
             ⛪
@@ -195,7 +182,7 @@
         </div>
 
         <p class="event-location">
-            Սբ․ Գայանե Եկեղեցի
+            Մուղնի՝ Սբ․ Գևորգ եկեղեցի
         </p>
 
         <div class="event-image">
@@ -203,7 +190,7 @@
         </div>
 
         <a
-                href="https://maps.app.goo.gl/tNL9h6bnY3YBecLJ8"
+                href="https://maps.app.goo.gl/oVv26iq2C7JHSiLv7"
                 target="_blank"
                 class="map-btn">
             Ինչպես հասնել
@@ -212,7 +199,7 @@
     </section>
 
     <!-- RECEPTION -->
-    <section class="event reveal">
+    <section class="event" data-aos="fade-left">
 
         <div class="event-icon">
             🥂
@@ -221,11 +208,11 @@
         <h2>Հանդիսություն</h2>
 
         <div class="event-time">
-            17:00
+            17:30
         </div>
 
         <p class="event-location">
-            Դվին Մյուզիք Հոլլ
+            Prime Hall ռեստորան
         </p>
 
         <div class="event-image">
@@ -233,7 +220,7 @@
         </div>
 
         <a
-                href="https://maps.app.goo.gl/KbZit3ohozCfjPgw8"
+                href="https://maps.app.goo.gl/6hA7ewR1DYiriTZM6"
                 target="_blank"
                 class="map-btn">
             Ինչպես հասնել
@@ -242,36 +229,45 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="gallery-section reveal">
+    <section class="couple-gallery">
 
-        <h2>Մեր հիշողությունները</h2>
+        <div class="photo p1"
+             data-aos="zoom-in"
+             data-aos-delay="100">
+            <img src="photo1.jpg" alt="">
+        </div>
 
-        <div class="gallery-grid">
+        <div class="photo p2"
+             data-aos="zoom-in"
+             data-aos-delay="250">
+            <img src="photo2.jpg" alt="">
+        </div>
 
-            <img src="photo1.png" alt="">
-            <img src="photo2.png" alt="">
-            <img src="photo3.png" alt="">
-            <img src="photo4.png" alt="">
-            <img src="photo5.png" alt="">
-            <img src="photo6.png" alt="">
-            <img src="photo7.png" alt="">
-            <img src="photo8.png" alt="">
+        <div class="photo p3"
+             data-aos="zoom-in"
+             data-aos-delay="400">
+            <img src="photo3.jpg" alt="">
+        </div>
 
+        <div class="photo p4"
+             data-aos="zoom-in"
+             data-aos-delay="550">
+            <img src="photo4.jpg" alt="">
         </div>
 
     </section>
 
     <!-- RSVP -->
-    <section class="rsvp-section reveal">
+    <section class="rsvp-section" data-aos="fade-up">
 
         <div class="glass-card">
 
             <h2>
-                Կկարողանա՞ք ներկա գտնվել
+                Հաստատեք ձեր ներկայությունը
             </h2>
 
             <button id="showModalBtn" class="confirm-btn">
-                ՀԱՍՏԱՏԵԼ ՆԵՐԿԱՅՈՒԹՅՈՒՆԸ
+                Հաստատել
             </button>
 
         </div>
@@ -279,7 +275,7 @@
     </section>
 
     <!-- FOOTER -->
-    <section class="footer-section reveal">
+    <section class="footer-section" data-aos="fade-up">
 
         <p>
             «Սերը երբեք չի վերջանում»
@@ -298,7 +294,7 @@
 
     <div class="modal-card">
 
-        <h2>Հաստատում</h2>
+        <h2>Կկարողանա՞ք ներկա գտնվել</h2>
 
         <input
                 type="text"
@@ -346,9 +342,15 @@
 
 </div>
 
+<div id="successPopup" class="success-popup">
+    ✅ Շնորհակալություն։
+    Ձեր պատասխանը հաջողությամբ ուղարկվեց։
+</div>
+
+
 <!-- MUSIC -->
 <button id="musicToggle" class="music-btn">
-    🎵
+    🔇
 </button>
 
 <audio
@@ -357,6 +359,13 @@
         loop>
 </audio>
 
+<div id="lightbox" class="lightbox">
+
+    <img id="lightboxImg">
+
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="script.js"></script>
 
 </body>
