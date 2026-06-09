@@ -1,7 +1,6 @@
 /* =========================
-   RESET
+   RESET & BASE
 ========================= */
-
 *{
     margin:0;
     padding:0;
@@ -10,6 +9,9 @@
 
 html{
     scroll-behavior:smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    height: auto;
 }
 
 body {
@@ -18,19 +20,20 @@ body {
     color: #5c5954;
     position:relative;
     touch-action: pan-x pan-y;
+    overflow-x:hidden;
+    overflow-y:auto;
+    width:100%;
+    height: auto;
 }
 
 /* =========================
    VARIABLES
 ========================= */
-
 :root{
     --primary:#d7a98c;
     --primary-dark:#e8cec0;
-
     --text:#5c5954;
     --light:#ffffff;
-
     --glass:rgba(255,255,255,.22);
     --border:rgba(255,255,255,.4);
 }
@@ -38,7 +41,6 @@ body {
 /* =========================
    ANIMATED BACKGROUND
 ========================= */
-
 .bg-gradient{
     position:fixed;
     inset:0;
@@ -48,202 +50,55 @@ body {
 
 .bg-gradient::before{
     content:"";
-
     position:absolute;
     width:700px;
     height:700px;
-
     border-radius:50%;
-
-    background:
-            radial-gradient(
-                    circle,
-                    rgba(230,213,207,.25),
-                    transparent 70%
-            );
-
+    background:radial-gradient(circle, rgba(230,213,207,.25), transparent 70%);
     top:-200px;
     left:-150px;
-
     animation:floatGlow1 14s infinite alternate ease-in-out;
 }
 
 .bg-gradient::after{
     content:"";
-
     position:absolute;
     width:600px;
     height:600px;
-
     border-radius:50%;
-
-    background:
-            radial-gradient(
-                    circle,
-                    rgba(230,213,207,.2),
-                    transparent 70%
-            );
-
+    background:radial-gradient(circle, rgba(230,213,207,.2), transparent 70%);
     bottom:-150px;
     right:-150px;
-
     animation:floatGlow2 16s infinite alternate ease-in-out;
 }
 
 @keyframes floatGlow1{
-    from{
-        transform:translate(0,0);
-    }
-    to{
-        transform:translate(120px,80px);
-    }
+    from{ transform:translate(0,0); }
+    to{ transform:translate(120px,80px); }
 }
 
 @keyframes floatGlow2{
-    from{
-        transform:translate(0,0);
-    }
-    to{
-        transform:translate(-120px,-90px);
-    }
+    from{ transform:translate(0,0); }
+    to{ transform:translate(-120px,-90px); }
 }
 
 /* =========================
    GLASS CARD
 ========================= */
-
 .glass-card{
     width:min(92%,900px);
-
     margin:auto;
-
     padding:35px;
-
     border-radius:30px;
-
     background:var(--glass);
-
     backdrop-filter:blur(20px);
-
     border:1px solid var(--border);
-
-    box-shadow:
-            0 10px 30px rgba(0,0,0,.08);
-}
-
-/* =========================
-   WELCOME SCREEN
-========================= */
-
-.welcome-screen{
-    position:fixed;
-    inset:0;
-
-    z-index:5000;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    transition: opacity 0.9s ease, transform 0.9s ease;
-
-    background:
-            linear-gradient(
-                    rgba(0,0,0,.25),
-                    rgba(0,0,0,.25)
-            ),
-            url("hero.jpg")
-            center/cover;
-}
-
-.welcome-card{
-    width:90%;
-    max-width:420px;
-
-    padding:45px 30px;
-
-    border-radius:30px;
-
-    text-align:center;
-
-    background:rgba(255,255,255,.18);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.3);
-
-    animation:cardAppear 1.2s ease;
-}
-
-@keyframes cardAppear{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:none;
-    }
-}
-
-.ring-icon{
-    font-size:60px;
-    margin-bottom:15px;
-}
-
-.welcome-names{
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;
-    margin-bottom:15px;
-    color:white;
-}
-
-.welcome-date{
-    color:white;
-    opacity:.9;
-    margin-bottom:30px;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.open-btn,
-.confirm-btn,
-.map-btn{
-    background:
-            linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-dark)
-            );
-
-    color:white;
-
-    border:none;
-
-    border-radius:20px;
-
-    cursor:pointer;
-
-    font-weight:600;
-
-    padding:16px 28px;
-
-    transition:.35s;
-}
-
-.open-btn:hover,
-.confirm-btn:hover,
-.map-btn:hover{
-    transform:translateY(-4px);
-
-    box-shadow:0 12px 30px rgba(230,157,106,.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
 
 /* =========================
    HERO
 ========================= */
-
 .hero{
     padding-top:0;
 }
@@ -251,39 +106,36 @@ body {
 .hero-image{
     height: 100dvh;
     min-height: 100vh;
-
     background-image:url("couple.jpg");
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;
-
     animation:heroFloat 6s ease-in-out infinite;
+    position:relative;
 }
 
 @keyframes heroFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
 }
-
 
 .hero-names{
     font-family:'Cormorant Garamond',serif;
     font-size:4rem;
+    color:#c8895d;
+    text-shadow:0 4px 15px rgba(255,255,255,.5);
 }
 
 .hero-subtitle{
     font-size:1.2rem;
     margin-top:10px;
+    color:#d79f78;
+    text-shadow:0 4px 15px rgba(255,255,255,.5);
 }
 
 /* =========================
-   SECTION
+   SECTION & TEXTS
 ========================= */
-
 section{
     padding:90px 20px;
 }
@@ -294,42 +146,46 @@ section h2{
     font-size:2rem;
 }
 
+.intro-section{
+    text-align:center;
+}
+
+.intro-section h2{
+    font-family:'Cormorant Garamond',serif;
+    color:#d6ac60;
+    margin-bottom:20px;
+}
+
+.intro-text{
+    max-width:700px;
+    margin:auto;
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
 /* =========================
    COUNTDOWN
 ========================= */
-
 .countdown-grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
+    grid-template-columns: repeat(4,1fr);
     gap:20px;
-
     width:min(900px,95%);
     margin:auto;
 }
 
 .time-box{
     background:white;
-
     border-radius:25px;
-
     padding:30px 15px;
-
     text-align:center;
-
-    box-shadow:
-            0 10px 25px rgba(0,0,0,.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
 .time-box span{
     display:block;
-
     font-size:3rem;
-
     font-weight:700;
-
     color:#d6ac60;
 }
 
@@ -338,12 +194,29 @@ section h2{
 }
 
 /* =========================
-   EVENTS
+   EVENTS & PROGRAM
 ========================= */
+.program-section .glass-card{
+    text-align:center;
+    padding:50px 35px;
+}
+
+.program-section h2{
+    margin:0;
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    color:#d6ac60;
+    letter-spacing:1px;
+}
+
+.program-section{
+    padding-bottom:20px;
+}
 
 .event{
     max-width:900px;
-    margin:auto;
+    margin:40px auto auto auto;
     text-align:center;
 }
 
@@ -365,31 +238,17 @@ section h2{
 .event-image img{
     width:100%;
     border-radius:25px;
-
-    box-shadow:
-            0 15px 35px rgba(0,0,0,.12);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
 }
 
 /* =========================
-   GALLERY
+   GALLERY & COUPLE PHOTOS
 ========================= */
-
-.gallery-grid{
-    width:min(1200px,95%);
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-}
-
 .gallery-grid img{
     width:100%;
+    height:320px;
+    object-fit:cover;
     border-radius:20px;
-
     transition:.4s;
 }
 
@@ -397,140 +256,40 @@ section h2{
     transform:scale(1.05);
 }
 
-/* =========================
-   MODAL
-========================= */
-
-.modal{
-    position:fixed;
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-    align-items:center;
-
-    background:rgba(0,0,0,.55);
-
-    backdrop-filter:blur(6px);
-
-    z-index:6000;
+.couple-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    width:700px;
+    max-width:95%;
+    margin:auto;
 }
 
-.modal-card{
-    width:90%;
-    max-width:450px;
-
-    background:white;
-
-    border-radius:30px;
-
-    padding:35px;
-}
-
-.modal-card input,
-.modal-card textarea{
+.photo img{
     width:100%;
-
-    margin-top:12px;
-    margin-bottom:12px;
-
-    padding:14px;
-
-    border-radius:15px;
-
-    border:1px solid #ddd;
+    display:block;
+    border-radius:28px;
+    object-fit:cover;
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+    transition:.4s;
 }
 
-.modal-card textarea{
-    min-height:120px;
-    resize:none;
+.photo img:hover{
+    transform:scale(1.03);
 }
+
+.p1{ margin-top:0; }
+.p2{ margin-top:80px; }
+.p3{ margin-top:-60px; }
+.p4{ margin-top:40px; }
 
 /* =========================
-   MUSIC BUTTON
+   DATE & CALENDAR
 ========================= */
-
-.music-btn{
-    position:fixed;
-
-    top:20px;
-    right:20px;
-
-    width:55px;
-    height:55px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:var(--primary);
-
-    color:white;
-
-    font-size:1.3rem;
-
-    cursor:pointer;
-
-    z-index:7000;
-
-    box-shadow:
-            0 8px 20px rgba(0,0,0,.18);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    .hero-names{
-        font-size:3rem;
-    }
-
-    .welcome-names{
-        font-size:2.3rem;
-    }
-
-    .countdown-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .event-time{
-        font-size:3rem;
-    }
-
-}
-
-@media(max-width:480px){
-
-    section{
-        padding:70px 15px;
-    }
-
-    .countdown-grid{
-        gap:12px;
-    }
-
-    .time-box{
-        padding:20px 10px;
-    }
-
-    .time-box span{
-        font-size:2rem;
-    }
-
-}
-
-
-
-/* DATE SECTION */
-
 .hero-date{
     font-size:3rem;
     font-weight:700;
-    color:#d6ac60;;
+    color:#d6ac60;
     text-align:center;
     margin:15px 0;
 }
@@ -541,80 +300,132 @@ section h2{
     font-size:1.1rem;
 }
 
-/* CALENDAR */
-
 .calendar{
-    margin-top:20px;
+    max-width:400px;
+    margin:20px auto auto auto;
 }
 
 .calendar-header{
     text-align:center;
-    font-size:1.8rem;
+    font-size:1.3rem;
     font-weight:700;
     color:#d6ac60;
     margin-bottom:20px;
 }
 
-.weekdays,
-.calendar-days{
+.weekdays, .calendar-days{
     display:grid;
     grid-template-columns:repeat(7,1fr);
-    gap:10px;
+    gap:5px;
 }
 
 .weekdays span{
     text-align:center;
     font-weight:600;
     color:#888;
+    font-size: 0.8rem;
 }
 
 .day{
     background:white;
-
     border-radius:16px;
-
-    padding:15px;
-
-    text-align:center;
-
+    height:42px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.85rem;
     cursor:pointer;
-
     transition:.3s;
-
-    box-shadow:
-            0 5px 15px rgba(0,0,0,.06);
+    box-shadow: 0 5px 15px rgba(0,0,0,.06);
 }
 
 .day:hover{
     transform:translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.12);
+}
 
-    box-shadow:
-            0 12px 25px rgba(0,0,0,.12);
+.day.empty{
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
 }
 
 .wedding-day{
-    background:linear-gradient(
-            135deg,
-            #e69d6a,
-            #e6ba9c
-    );
-
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:linear-gradient(135deg, #e6c0a6, #e8cec0);
     color:white;
-
-    box-shadow:
-            0 8px 25px rgba(230,157,106,.35);
+    font-weight:700;
+    font-size: 0.9rem;
+    box-shadow: 0 6px 18px rgba(230,157,106,.3);
+    animation:pulseDay 2s infinite;
 }
 
-/* RSVP */
+.wedding-day::before{
+    content:"❤️";
+    position:absolute;
+    top:-10px;
+    right:-6px;
+    font-size:18px;
+    animation:heartFloat 2s infinite ease-in-out;
+}
 
+@keyframes pulseDay{
+    0%, 100%{ transform:scale(1); }
+    50%{ transform:scale(1.08); }
+}
+
+@keyframes heartFloat{
+    0%, 100%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+}
+
+/* =========================
+   RSVP & MODAL
+========================= */
 .rsvp-section{
     text-align:center;
 }
 
-#guestCounter{
-    margin-top:20px;
-    color:#e69d6a;
-    font-weight:600;
+.modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(6px);
+    z-index:6000;
+}
+
+.modal-card{
+    width:90%;
+    max-width:450px;
+    background:white;
+    border-radius:30px;
+    padding:35px;
+    margin:auto;
+    position:relative;
+}
+
+.modal-card input, .modal-card textarea{
+    width:100%;
+    margin-top:12px;
+    margin-bottom:12px;
+    padding:14px;
+    border-radius:15px;
+    border:1px solid #ddd;
+}
+
+.modal-card textarea{
+    min-height:120px;
+    resize:none;
 }
 
 .attendance-options{
@@ -648,604 +459,115 @@ section h2{
     cursor:pointer;
 }
 
-/* FOOTER */
-
-.footer-section{
-    text-align:center;
-    padding:100px 20px;
-}
-
-.footer-heart{
-    font-size:50px;
-    margin-bottom:20px;
-}
-
-.footer-section h3{
-    margin-top:15px;
-    color:#d6ac60;
-}
-
-
-
-.confirm-btn{
-    background:linear-gradient(
-            135deg,
-            #e3b48d,
-            #e3c6b8
-    );
-
-    box-shadow:
-            0 10px 25px rgba(230,157,106,.35);
-}
-
-
 #sendBtn{
     width:100%;
-
     padding:16px;
-
     border:none;
-
     border-radius:15px;
-
     background:#e3b48d;
-
     color:white;
-
     font-weight:700;
-
     cursor:pointer;
-
     transition:.3s;
 }
 
-#sendBtn:hover{
-    background:#d88953;
-}
-
-.wedding-day{
-    width:100%;
-    height:100%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:14px;
-
-    background:linear-gradient(
-            135deg,
-            #e69d6a,
-            #e6ba9c
-    );
-
-    color:white;
-    font-weight:700;
-
-    box-shadow:
-            0 6px 18px rgba(230,157,106,.3);
-
-    animation:pulseDay 2s infinite;
-}
-
-@keyframes pulseDay{
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.08);
-    }
-
-    100%{
-        transform:scale(1);
-    }
-}
-
-
-
-
-@media (max-width: 768px) {
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
-
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .gallery img {
-        width: 100%;
-        height: auto;
-    }
-
-    .time-box {
-        min-width: 70px;
-        padding: 10px;
-    }
-
-    #timer {
-        gap: 8px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .modal-content {
-        width: 92%;
-        padding: 20px;
-    }
-
-    button {
-        width: 100%;
-    }
-}
-
-.calendar-header{
-    font-size: 1.3rem;
-}
-
-.weekdays span{
-    font-size: 0.8rem;
-}
-
-.day{
-    padding: 8px;
-    font-size: 0.9rem;
-}
-
-.wedding-day{
-    padding: 8px;
-    font-size: 0.9rem;
-}
-
-.calendar-days,
-.weekdays{
-    gap: 5px;
-}
-
-
-@media(max-width:480px){
-
-    .day{
-        padding: 6px;
-        font-size: 0.8rem;
-    }
-
-    .wedding-day{
-        padding: 6px;
-        font-size: 0.8rem;
-    }
-
-    .calendar-header{
-        font-size: 1.1rem;
-    }
-}
-
-
-.day.empty{
-    background: transparent;
-    box-shadow: none;
-    cursor: default;
-}
-
-
-.gallery-grid img{
-    width:100%;
-    height:320px;
-    object-fit:cover;
-}
-
-@media(max-width:768px){
-
-    .hero-image{
-        height:100vh;
-        background-size:cover;
-        background-position:center;
-        background-repeat:no-repeat;
-    }
-
-}
-
-.day{
-    height:42px;
-    padding:0;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:0.85rem;
-}
-
-.wedding-day{
-    position:relative;
-
-    background:linear-gradient(
-            135deg,
-            #e6c0a6,
-            #e8cec0
-    );
-
-    color:white;
-    font-weight:700;
-
-    animation:pulseDay 2s infinite;
-}
-
-.wedding-day::before{
-    content:"❤️";
-    position:absolute;
-    top:-10px;
-    right:-6px;
-
-    font-size:18px;
-
-    animation:heartFloat 2s infinite ease-in-out;
-}
-
-@keyframes heartFloat{
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-6px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-}
-
-
-.program-section .glass-card{
-    text-align:center;
-    padding:50px 35px;
-}
-
-.program-section h2{
-    margin:0;
-    text-align:center;
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;
-    color:#d6ac60;
-    letter-spacing:1px;
-}
-
-
-@media(max-width:768px){
-
-    .program-section h2{
-        font-size:2.2rem;
-    }
-
-}
-
-@media(max-width:768px){
-
-    .calendar{
-        max-width:330px;
-        margin:auto;
-    }
-
-    .calendar-days,
-    .weekdays{
-        gap:4px;
-    }
-
-    .day{
-        height:36px;
-        font-size:0.8rem;
-        border-radius:10px;
-    }
-
-    .wedding-day{
-        height:36px;
-        font-size:0.8rem;
-    }
-
-}
-
-.calendar{
-    max-width:400px;
-    margin:auto;
-}
-
-
-.intro-section{
-    text-align:center;
-}
-
-.intro-section h2{
-    font-family:'Cormorant Garamond',serif;
-    color:#d6ac60;
-    margin-bottom:20px;
-}
-
-.intro-text{
-    max-width:700px;
-    margin:auto;
-    line-height:1.9;
-    font-size:1.05rem;
-}
-
-/* =========================
-   COUPLE GALLERY
-========================= */
-
-.couple-gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-
-    gap:25px;
-
-    width:700px;
-    max-width:95%;
-
-    margin:auto;
-}
-
-.photo img{
-    width:100%;
-    display:block;
-
-    border-radius:28px;
-
-    object-fit:cover;
-
-    box-shadow:
-            0 15px 35px rgba(0,0,0,.12);
-}
-
-/* PHOTO POSITIONS */
-
-.p1{
-    margin-top:0;
-}
-
-.p2{
-    margin-top:80px;
-}
-
-.p3{
-    margin-top:-60px;
-}
-
-.p4{
-    margin-top:40px;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .couple-gallery{
-        gap:15px;
-    }
-
-    .p1{
-        margin-top:0;
-    }
-
-    .p2{
-        margin-top:50px;
-    }
-
-    .p3{
-        margin-top:-35px;
-    }
-
-    .p4{
-        margin-top:25px;
-    }
-
-}
-
-.photo img{
-    transition:.4s;
-}
-
-.photo img:hover{
-    transform:scale(1.03);
-}
-
-.music-btn.playing{
-    animation:spin 4s linear infinite;
-}
-
-@keyframes spin{
-    from{
-        transform:rotate(0);
-    }
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-
-.program-section{
-    padding-bottom:20px;
-}
-
-.event{
-    margin-top:40px;
-}
-
-.hero-image{
-    position:relative;
-}
-
-
-.hero-names{
-    color:#c8895d;
-    text-shadow:0 4px 15px rgba(255,255,255,.5);
-}
-
-.hero-subtitle{
-    color:#d79f78;
-    text-shadow:0 4px 15px rgba(255,255,255,.5);
-}
-
-
+#sendBtn:hover{ background:#d88953; }
 
 .success-popup{
     position:fixed;
-
     top:30px;
     left:50%;
-
     transform:translateX(-50%);
-
     background:#fff;
-
     padding:18px 25px;
-
     border-radius:18px;
-
     box-shadow:0 10px 30px rgba(0,0,0,.15);
-
     z-index:9999;
-
     display:none;
 }
 
+/* =========================
+   UTILITIES & MUSIC
+========================= */
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    font-size:1.3rem;
+    cursor:pointer;
+    z-index:7000;
+    box-shadow: 0 8px 20px rgba(0,0,0,.18);
+}
+
+.music-btn.playing{ animation:spin 4s linear infinite; }
+
+@keyframes spin{
+    from{ transform:rotate(0); }
+    to{ transform:rotate(360deg); }
+}
 
 .lightbox{
     position:fixed;
     inset:0;
-
     background:rgba(0,0,0,.9);
-
     display:none;
-
     justify-content:center;
     align-items:center;
-
     z-index:9999;
 }
 
 .lightbox img{
     max-width:90%;
     max-height:90%;
-
     border-radius:20px;
 }
 
-body.locked {
-    touch-action: none;
-}
-
-
-.welcome-card{
-    text-align:center;
-    word-break:break-word;
-}
-
-.welcome-names{
-    line-height:1.2;
-}
-
-.welcome-card{
-    margin:auto;
-    position:relative;
-}
-
-.welcome-names{
-    font-size:clamp(2rem, 6vw, 3rem);
-}
-
-html{
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-
-
-
-body{
-    overflow-x:hidden;
-    overflow-y:auto;
-    width:100%;
-}
-
-/* Ֆիքսում ենք scroll-ը AOS-ի համար */
-html {
-    scroll-behavior: smooth;
-    height: auto; /* Ջնջում ենք 100%-ը */
-}
-
-body {
-    overflow-x: hidden;
-    overflow-y: auto; /* Թույլ ենք տալիս ազատ scroll */
-    height: auto;     /* Ջնջում ենք 100%-ը */
-}
-
-body{
-    overflow-x:hidden;
-    overflow-y:auto;
-}
-
-.aos-init.aos-animate{
-    opacity:1 !important;
-}
+body.locked { touch-action: none; }
+.aos-init.aos-animate{ opacity:1 !important; }
 
 /* =========================
    WELCOME SCREEN (RESPONSIVE)
 ========================= */
-
 .welcome-screen{
     position:fixed;
     inset:0;
     z-index:5000;
-
     display:flex;
     justify-content:center;
     align-items:center;
-    padding: 15px; /* 🆕 Թույլ չի տա, որ քարտը կպչի էկրանի եզրերին */
-    transition: opacity 0.9s ease, transform 0.9s ease;
-
-    background:
-            linear-gradient(
-                    rgba(0,0,0,.25),
-                    rgba(0,0,0,.25)
-            ),
-            url("hero.jpg")
-            center/cover no-repeat;
+    padding: 15px;
+    transition: opacity 2.2s ease, transform 2.2s ease;
+    background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url("hero.jpg") center/cover no-repeat;
 }
 
 .welcome-card{
-    width: 100%; /* 🆕 Հարմարվում է էկրանի լայնությանը */
+    width: 100%;
     max-width: 400px;
-
-    padding: 35px 20px; /* 🆕 Օպտիմալ padding հեռախոսի համար */
-
+    padding: 35px 20px;
     border-radius:30px;
     text-align:center;
-
     background:rgba(255,255,255,.18);
     backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px); /* 🆕 Safari-ի համար */
-
+    -webkit-backdrop-filter:blur(18px);
     border:1px solid rgba(255,255,255,.3);
-
-    word-break: break-word; /* 🆕 Թույլ չի տա տեքստին դուրս թռչել */
+    word-break: break-word;
     box-sizing: border-box;
-    animation:cardAppear 1.2s ease;
+    animation:cardAppear 2.2s ease;
 }
-
 .ring-icon{
-    font-size: clamp(40px, 10vw, 60px); /* 🆕 Ավտոմատ փոքրացող մատանի */
+    font-size: clamp(40px, 10vw, 60px);
     margin-bottom:15px;
 }
 
 .welcome-names{
     font-family:'Cormorant Garamond',serif;
-    font-size: clamp(1.8rem, 7vw, 3rem); /* 🆕 Ավտոմատ փոքրացող անուններ */
+    font-size: clamp(1.8rem, 7vw, 3rem);
     line-height:1.2;
     margin-bottom:15px;
     color:white;
@@ -1254,44 +576,68 @@ body{
 .welcome-date{
     color:white;
     opacity:.9;
-    font-size: clamp(0.9rem, 4vw, 1.1rem); /* 🆕 Ավտոմատ փոքրացող ամսաթիվ */
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
     margin-bottom:30px;
 }
 
 /* =========================
-   BUTTONS (RESPONSIVE)
+   BUTTONS & RESPONSIVE MEDIA
 ========================= */
-
-.open-btn,
-.confirm-btn,
-.map-btn{
-    background:
-            linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-dark)
-            );
-
+.open-btn, .confirm-btn, .map-btn{
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color:white;
     border:none;
     border-radius:20px;
     cursor:pointer;
     font-weight:600;
-
-    /* 🎯 Կենտրոնացնում ենք տեքստը կոճակի ներսում */
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 16px 24px;
     font-size: clamp(0.85rem, 3.5vw, 1rem);
-
     width: 100%;
     max-width: 280px;
-    margin: 0 auto; /* 🆕 Միշտ կպահի կոճակը էջի/քարտի ճիշտ կենտրոնում */
-
+    margin: 0 auto;
     transition:.35s;
     box-sizing: border-box;
 }
 
+.confirm-btn{
+    background:linear-gradient(135deg, #e3b48d, #e3c6b8);
+    box-shadow: 0 10px 25px rgba(230,157,106,.35);
+}
 
+.footer-section{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.footer-section h3{
+    margin-top:15px;
+    color:#d6ac60;
+}
+
+@media(max-width:768px){
+    .hero-names{ font-size:3rem; }
+    .countdown-grid{ grid-template-columns: repeat(2,1fr); }
+    .event-time{ font-size:3rem; }
+    .hero-image{ height:100vh; }
+    .program-section h2{ font-size:2.2rem; }
+    .calendar{ max-width:330px; }
+    .calendar-days, .weekdays{ gap:4px; }
+    .day, .wedding-day{ height:36px; font-size:0.8rem; }
+    .day{ border-radius:10px; }
+    .couple-gallery{ gap:15px; }
+    .p2{ margin-top:50px; }
+    .p3{ margin-top:-35px; }
+    .p4{ margin-top:25px; }
+}
+
+@media(max-width:480px){
+    section{ padding:70px 15px; }
+    .countdown-grid{ gap:12px; }
+    .time-box{ padding:20px 10px; }
+    .time-box span{ font-size:2rem; }
+    .day, .wedding-day{ padding: 6px; font-size: 0.8rem; }
+    .calendar-header{ font-size: 1.1rem; }
+}
