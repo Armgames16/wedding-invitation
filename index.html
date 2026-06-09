@@ -11,362 +11,149 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 </head>
-
 <body>
 
-
-<!-- Animated Background -->
 <div class="bg-gradient"></div>
 <div class="particles"></div>
 
-<!-- OPENING SCREEN -->
 <section id="welcomeScreen" class="welcome-screen">
-
     <div class="welcome-overlay"></div>
-
     <div class="welcome-card">
-
         <div class="ring-icon">💍</div>
-
-        <p class="invite-small">
-            Հարսանյաց հրավիրատոմս
-        </p>
-
-        <h1 class="welcome-names">
-            Ստյոպա <span>և</span> Կարինե
-        </h1>
-
-        <p class="welcome-date">
-            29 Հուլիսի • 2026
-        </p>
-
-        <button id="openInvitation" class="open-btn">
-            ԲԱՑԵԼ ՀՐԱՎԻՐԱՏՈՄՍԸ
-        </button>
-
+        <p class="invite-small">Հարսանյաց հրավիրատոմս</p>
+        <h1 class="welcome-names">Ստյոպա <span>և</span> Կարինե</h1>
+        <p class="welcome-date">29 Հուլիսի • 2026</p>
+        <button id="openInvitation" class="open-btn">ԲԱՑԵԼ ՀՐԱՎԻՐԱՏՈՄՍԸ</button>
     </div>
-
 </section>
 
-<!-- MAIN CONTENT -->
 <main id="mainContent">
 
-    <!-- HERO -->
     <section class="hero" data-aos="zoom-out">
-
-        <div class="hero-image">
-
-        </div>
-
+        <div class="hero-image"></div>
     </section>
 
     <section class="intro-section" data-aos="fade-up">
-
         <div class="glass-card">
-
             <h2>Սիրելի ընկերներ և հարազատներ</h2>
-
             <p class="intro-text">
                 <i>Սիրով հրավիրում ենք ներկա գտնվելու մեր հարսանյաց հանդիսությանը և կիսելու մեր երջանկությունը․․․</i>
             </p>
-
         </div>
-
     </section>
 
-    <!-- DATE SECTION -->
     <section class="date-section" data-aos="fade-up">
-
         <div class="glass-card">
-
             <h2>Հարսանիքը տեղի կունենա</h2>
-
-            <div class="hero-date">
-                29 Հուլիսի 2026
-            </div>
-
-            <p class="weekday">
-                Չորեքշաբթի
-            </p>
-
+            <div class="hero-date">29 Հուլիսի 2026</div>
+            <p class="weekday">Չորեքշաբթի</p>
         </div>
-
     </section>
 
-    <!-- COUNTDOWN -->
     <section class="countdown-section" data-aos="zoom-in">
-
         <h2>Մինչև հարսանիքը մնացել է</h2>
-
         <div id="timer" class="countdown-grid">
-
-            <div class="time-box">
-                <span>00</span>
-                <small>Օր</small>
-            </div>
-
-            <div class="time-box">
-                <span>00</span>
-                <small>Ժամ</small>
-            </div>
-
-            <div class="time-box">
-                <span>00</span>
-                <small>Րոպե</small>
-            </div>
-
-            <div class="time-box">
-                <span>00</span>
-                <small>Վայրկյան</small>
-            </div>
-
+            <div class="time-box"><span>00</span><small>Օր</small></div>
+            <div class="time-box"><span>00</span><small>Ժամ</small></div>
+            <div class="time-box"><span>00</span><small>Րոպե</small></div>
+            <div class="time-box"><span>00</span><small>Վայրկյան</small></div>
         </div>
-
     </section>
 
-    <!-- CALENDAR -->
     <section class="calendar-section" data-aos="fade-up">
-
         <div class="glass-card">
-
             <h2>Օրացույց</h2>
-
             <div class="calendar">
-
-                <div class="calendar-header">
-                    Հուլիս 2026
-                </div>
-
+                <div class="calendar-header">Հուլիս 2026</div>
                 <div class="weekdays">
-                    <span>Երկ</span>
-                    <span>Երք</span>
-                    <span>Չրք</span>
-                    <span>Հնգ</span>
-                    <span>Ուրբ</span>
-                    <span>Շբթ</span>
-                    <span>Կրկ</span>
+                    <span>Երկ</span><span>Երք</span><span>Չրք</span><span>Հնգ</span><span>Ուրբ</span><span>Շբթ</span><span>Կրկ</span>
                 </div>
-
                 <div id="calendarDays" class="calendar-days"></div>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- CEREMONY -->
     <section class="program-section">
-
         <div class="glass-card">
-
             <h2>Օրվա ծրագիր</h2>
-
         </div>
-
     </section>
-
 
     <section class="event" data-aos="fade-right">
-
-        <div class="event-icon">
-            ⛪
-        </div>
-
+        <div class="event-icon">⛪</div>
         <h2>Պսակադրություն</h2>
-
-        <div class="event-time">
-            15:00
-        </div>
-
-        <p class="event-location">
-            Մուղնի՝ Սբ․ Գևորգ եկեղեցի
-        </p>
-
-        <div class="event-image">
-            <img src="church.jpg" alt="Church">
-        </div>
-
-        <a
-                href="https://maps.app.goo.gl/oVv26iq2C7JHSiLv7"
-                target="_blank"
-                class="map-btn">
-            Ինչպես հասնել
-        </a>
-
+        <div class="event-time">15:00</div>
+        <p class="event-location">Մուղնի՝ Սբ․ Գևորգ եկեղեցի</p>
+        <div class="event-image"><img src="church.jpg" alt="Church"></div>
+        <a href="https://maps.google.com" target="_blank" class="map-btn">Ինչպես հասնել</a>
     </section>
 
-    <!-- RECEPTION -->
     <section class="event" data-aos="fade-left">
-
-        <div class="event-icon">
-            🥂
-        </div>
-
+        <div class="event-icon">🥂</div>
         <h2>Հանդիսություն</h2>
-
-        <div class="event-time">
-            17:30
-        </div>
-
-        <p class="event-location">
-            Prime Hall ռեստորան
-        </p>
-
-        <div class="event-image">
-            <img src="hall.jpg" alt="Hall">
-        </div>
-
-        <a
-                href="https://maps.app.goo.gl/6hA7ewR1DYiriTZM6"
-                target="_blank"
-                class="map-btn">
-            Ինչպես հասնել
-        </a>
-
+        <div class="event-time">17:30</div>
+        <p class="event-location">Prime Hall ռեստորան</p>
+        <div class="event-image"><img src="hall.jpg" alt="Hall"></div>
+        <a href="https://maps.google.com" target="_blank" class="map-btn">Ինչպես հասնել</a>
     </section>
 
-    <!-- GALLERY -->
     <section class="couple-gallery">
-
-        <div class="photo p1"
-             data-aos="zoom-in"
-             data-aos-delay="100">
-            <img src="photo1.jpg" alt="">
-        </div>
-
-        <div class="photo p2"
-             data-aos="zoom-in"
-             data-aos-delay="250">
-            <img src="photo2.jpg" alt="">
-        </div>
-
-        <div class="photo p3"
-             data-aos="zoom-in"
-             data-aos-delay="400">
-            <img src="photo3.jpg" alt="">
-        </div>
-
-        <div class="photo p4"
-             data-aos="zoom-in"
-             data-aos-delay="550">
-            <img src="photo4.jpg" alt="">
-        </div>
-
+        <div class="photo p1" data-aos="zoom-in" data-aos-delay="100"><img src="photo1.jpg" alt=""></div>
+        <div class="photo p2" data-aos="zoom-in" data-aos-delay="250"><img src="photo2.jpg" alt=""></div>
+        <div class="photo p3" data-aos="zoom-in" data-aos-delay="400"><img src="photo3.jpg" alt=""></div>
+        <div class="photo p4" data-aos="zoom-in" data-aos-delay="550"><img src="photo4.jpg" alt=""></div>
     </section>
 
-    <!-- RSVP -->
     <section class="rsvp-section" data-aos="fade-up">
-
         <div class="glass-card">
-
-            <h2>
-                Հաստատեք ձեր ներկայությունը
-            </h2>
-
-            <button id="showModalBtn" class="confirm-btn">
-                Հաստատել
-            </button>
-
+            <h2>Հաստատեք ձեր ներկայությունը</h2>
+            <button id="showModalBtn" class="confirm-btn">Հաստատել</button>
         </div>
-
     </section>
 
-    <!-- FOOTER -->
     <section class="footer-section" data-aos="fade-up">
-
-        <p>
-            «Սերը երբեք չի վերջանում»
-        </p>
-
-        <h3>
-            Սիրով սպասում ենք Ձեզ
-        </h3>
-
+        <p>«Սերը երբեք չի վերջանում»</p>
+        <h3>Սիրով սպասում ենք Ձեզ</h3>
     </section>
 
 </main>
 
-<!-- RSVP MODAL -->
 <div id="rsvpModal" class="modal">
-
     <div class="modal-card">
-
         <h2>Կկարողանա՞ք ներկա գտնվել</h2>
-
-        <input
-                type="text"
-                id="guestName"
-                placeholder="Անուն Ազգանուն"
-        >
-
+        <input type="text" id="guestName" placeholder="Անուն Ազգանուն">
         <div class="attendance-options">
-
-            <button class="option active" data-val="Այո">
-                Այո
-            </button>
-
-            <button class="option" data-val="Ոչ">
-                Ոչ
-            </button>
-
+            <button class="option active" data-val="Այո">Այո</button>
+            <button class="option" data-val="Ոչ">Ոչ</button>
         </div>
-
         <div id="countBox">
-
-            <input
-                    type="number"
-                    id="guestCount"
-                    min="1"
-                    value="1"
-            >
-
+            <input type="number" id="guestCount" min="1" value="1">
         </div>
-
-        <textarea
-                id="guestWish"
-                placeholder="Ձեր բարեմաղթանքը"
-        ></textarea>
-
-        <button id="sendBtn">
-            Հաստատել
-        </button>
-
-        <button id="closeModalBtn" class="close-btn">
-            Փակել
-        </button>
-
+        <textarea id="guestWish" placeholder="Ձեր բարեմաղթանքը"></textarea>
+        <button id="sendBtn">Հաստատել</button>
+        <button id="closeModalBtn" class="close-btn">Փակել</button>
     </div>
-
 </div>
 
 <div id="successPopup" class="success-popup">
-    ✅ Շնորհակալություն։
-    Ձեր պատասխանը հաջողությամբ ուղարկվեց։
+    ✅ Շնորհակալություն։ Ձեր պատասխանը հաջողությամբ ուղարկվեց։
 </div>
 
-
-<!-- MUSIC -->
-<button id="musicToggle" class="music-btn">
-    🔇
-</button>
-
-<audio
-        id="bgMusic"
-        src="music.mp3"
-        loop>
-</audio>
+<button id="musicToggle" class="music-btn">🔇</button>
+<audio id="bgMusic" src="music.mp3" loop></audio>
 
 <div id="lightbox" class="lightbox">
-
-    <img id="lightboxImg">
-
+    <img id="lightboxImg" alt="">
 </div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="script.js"></script>
-
+<script>
+    AOS.init({
+        duration: 1500, // Անիմացիայի տևողությունը (միլիվայրկյաններով)
+        once: true,     // Անիմացիան կատարվի միայն մեկ անգամ՝ scroll անելիս
+    });
+</script>
 </body>
 </html>
